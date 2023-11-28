@@ -66,6 +66,7 @@ class TimetableController extends Controller
     public function show( $timetable)
     {
         $timetable = Timetable::with(['subject', 'hall', 'user', 'group'])->findOrFail($timetable);
+
         return view('timetables.show', compact('timetable'));
     }
 
@@ -74,9 +75,14 @@ class TimetableController extends Controller
      */
     public function edit( $timetable)
     {
-        $timetable = Timetable::findOrFail($timetable);
-        // $student = User::with(['name,email'])-> findOrFail($user);
-        return view('timetables.edit', compact('timetable'));
+        $timetable = Timetable::with(['subject', 'hall', 'user', 'group'])->findOrFail($timetable);
+        $subjects =  Subject::all();
+        $days = Day::all();
+        $halls = Hall::all();
+        $groups = Group::all();
+        $students = User::all();
+
+        return view('timetables.edit', compact('timetable', 'subjects', 'days', 'halls', 'groups', 'students'));
     }
 
     /**
