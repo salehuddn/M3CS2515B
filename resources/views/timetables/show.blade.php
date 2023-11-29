@@ -6,7 +6,7 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Timetables</h2>
+                <h2>Show Timetable</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary mb-4" href="{{ route('timetables.index') }}">
