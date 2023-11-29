@@ -27,8 +27,6 @@
             <th>Lecturer Group</th>
             <th>Start</th>
             <th>End</th>
-            <th>Created At</th>
-            <th>Updated At</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($timetables as $index => $s)
@@ -41,8 +39,6 @@
             <td>{{$s->group->name}}</td>
             <td>{{$s->time_from}}</td>
             <td>{{$s->time_to}}</td>
-            <td>{{$s->created_at}}</td>
-            <td>{{$s->updated_at}}</td>
             <td>
                 <form action="{{ route('timetables.destroy',$s) }}" method="POST">
    
